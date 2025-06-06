@@ -1,0 +1,32 @@
+name: DEMO E2E Testing
+
+on:
+  push:
+    branches:
+      - master 
+  schedule:
+    - cron: '0 */2 * * *'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies with npm
+        run: |
+          npm install
+          npx playwright install
+      
+      - name: Test Cases for DemoBlaze
+        run: |
+          npm run test:entity
+          npm run test:cart
+          npm run test:complete  

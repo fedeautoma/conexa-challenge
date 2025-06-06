@@ -1,0 +1,18 @@
+{
+  "name": "conexachallenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:entity": "npx playwright test tests/tests/UserEntity.spec.ts",
+    "test:cart": "npx playwright test tests/tests/AddToCartValidation.spec.ts",
+    "test:complete": "npx playwright test tests/tests/CompleteOrder.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.30"
+  }
+}
