@@ -42,7 +42,7 @@ conexachallenge/
 
 ### 1. Clone the repo and install dependencies:
 ```bash
-git clone <your-repo-url>
+git clone (https://github.com/fedeautoma/conexa-challenge)
 cd conexachallenge
 npm install
 ```
