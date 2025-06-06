@@ -31,12 +31,13 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-    headless: true,   // abre navegador visualmente (opcional, útil para pruebas visuales)
+    headless: process.env.CI ? true : false,
+   // abre navegador visualmente (opcional, útil para pruebas visuales)
     viewport: null,   // ← establece viewport en null para maximizar automáticamente
     screenshot: 'on', 
     
     launchOptions: {
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--start-maximized'],
     }
   },
 
